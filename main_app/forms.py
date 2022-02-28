@@ -1,7 +1,4 @@
-from django. forms import ModelForm
-from .models import Symbol
+from django import forms
 
-class SymbolForm(ModelForm):
-    class Meta:
-        model = Symbol
-        fields = '__all__'
+class TickerForm(forms.Form):
+    ticker=forms.CharField(label="Ticker", max_length=5)

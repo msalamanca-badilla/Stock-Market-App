@@ -11,5 +11,6 @@ requestResponse = requests.get("https://api.tiingo.com/api/test?token=9cc1c059be
 print(requestResponse.json())
 
 urlpatterns = [
-    path('', views.add_symbol, name='stockcreate')
+    path('', views.index, name='index'),
+    path('<str:tid>', views.ticker, name ='ticker')
 ]

@@ -1,14 +1,24 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .models import Symbol
-from .forms import SymbolForm
+from .forms import TickerForm
+# from .tiingo import get_meta_data
+from django.http import HttpResponseRedirect
 
-def add_symbol(request):
-    symbols = Symbol.objects.all()
-    form = SymbolForm(request.POST)
-    if form.is_valid():
-        new_symbol = form.save(commit=False)
-        new_symbol.save()
-    return render(request, 'home.html', { 'symbols':symbols,'form':form})
+def index(request):
+    if request.method == 'POST':
+        form = TickerForm(request.POST)
+        if form.is_valid():
+            ticker = request.POST['ticker']
+            return HttpResponseRedirect(ticker)
+    else:
+        form=TickerForm()
+    return render(request, 'index.html', {'form':form})
+
+def ticker(request, tid):
+    context={}
+    context['ticker']=tid
+    # context['meta']=get_meta_data(tid)
+    return render(request, 'ticker.html', context)
 
 
 
