@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1>Stock Exchange</h1>
-    <form action = '/stocks/' method = 'post'>
+    <form action="" method="post">
         {% csrf_token %}
-        {{form.as.p}}
+        {{ form.as_p }}
+        <input type="submit" class="btn" value="Add Stock">
     </form>
 </body>
 </html>
