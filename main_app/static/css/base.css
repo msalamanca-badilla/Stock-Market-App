@@ -1,7 +1,8 @@
-body{
-    padding: 300px 0 0 0;
+.home{
+    padding: 300px 0 0 0; 
 }
 .form{
+    
     display: flex;
     justify-content: center;
 }
@@ -11,11 +12,15 @@ h1{
     justify-content: center;
 }
 
-.btn{
-    background-color: black;
+div.submitbutton{
+    display: flex;
+    justify-content: center;
 }
 
-input{
-    border-bottom: black;
-    border: black;
+label{
+    color: white;
+}
+
+.tickerform{
+    padding: 100px;
 }

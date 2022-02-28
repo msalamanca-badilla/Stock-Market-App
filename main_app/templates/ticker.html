@@ -1,8 +1,24 @@
 {% extends 'base.html' %} {% block content %}
+<div class = 'tickerform'>
     <h1>{{meta.name}}({{ticker}})</h1>
     <p>Description: {{meta.description}}</p>
-    <p>Price Open: {{price.open}}</p>
-    <p>Price High: {{price.high}}</p>
-    <p>Price Low: {{price.low}}</p>
-    <p>Price Close: {{price.close}}</p>
+    <table class = "table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Price Open:</th>
+                <th>Price High:</th>
+                <th>Price Low:</th>
+                <th>Price Close:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>${{price.open}}</th>
+                <th>${{price.high}}</th>
+                <th>${{price.low}}</th>
+                <th>${{price.close}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}
