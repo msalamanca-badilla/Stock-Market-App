@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>Stock Exchange</h1>
+    <form action = '/stocks/' method = 'post'>
+        {% csrf_token %}
+        {{form.as.p}}
+    </form>
 </body>
 </html>
